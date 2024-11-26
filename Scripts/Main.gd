@@ -33,10 +33,13 @@ func new_game():
 	$UI.update_score(score)
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	$BackgroundMusicPlayer.play()
 
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$BackgroundMusicPlayer.stop()
+	$GameOverSoundPlayer.play()
 
 func spawn_mob():
 	var mob_spawn_location = $MobPath/MobSpawnLocation
